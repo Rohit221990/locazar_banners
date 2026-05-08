@@ -169,57 +169,73 @@ export const sellerTemplates: Record<string, UITemplate> = {
     content: {
       type: 'html',
       html: `
-<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;padding:0 0 32px 0;">
-
-  <div style="padding:18px 16px 14px;border-bottom:1px solid #EEEEEE;">
-    <p style="margin:0;font-size:18px;font-weight:700;color:#111;">Add New Product</p>
-    <p style="margin:4px 0 0;font-size:13px;color:#888;">Category: \${category}</p>
+      <div style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #FFFFFF; border-radius: 28px 28px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.15); max-width: 500px; margin: auto; overflow: hidden; border: 1px solid #E5E5E5;">
+  
+  <!-- Handle -->
+  <div style="width: 100%; display: flex; justify-content: center; padding-top: 14px;">
+    <div style="width: 40px; height: 5px; background-color: #D1D1D6; border-radius: 10px;"></div>
   </div>
 
-  <div style="padding:16px;display:flex;flex-direction:column;gap:16px;">
-
-    <!-- Product images -->
-    <div>
-      <p style="margin:0 0 6px;font-size:14px;font-weight:600;color:#333;">Product Images <span style="color:#FF3B30;">*</span></p>
-      <p style="margin:0 0 10px;font-size:12px;color:#999;">Upload up to 5 clear photos. Good images increase sales.</p>
-      <div style="border:2px dashed #007AFF;border-radius:12px;background:#F0F7FF;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;">
-        <span style="font-size:30px;">📸</span>
-        <p style="margin:6px 0 0;font-size:13px;color:#007AFF;font-weight:600;">+ Add Photos (up to 5)</p>
-        <p style="margin:2px 0 0;font-size:11px;color:#AAAAAA;">Min 800×800 px · Max 10 MB each</p>
-      </div>
-    </div>
-
-    <!-- Product name -->
-    <div>
-      <p style="margin:0 0 6px;font-size:14px;font-weight:600;color:#333;">Product Name <span style="color:#FF3B30;">*</span></p>
-      <input type="text" placeholder="e.g. Cotton Kurta Set"
-        style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;color:#333;background:#FAFAFA;outline:none;" />
-    </div>
-
-    <!-- Description -->
-    <div>
-      <p style="margin:0 0 6px;font-size:14px;font-weight:600;color:#333;">Description</p>
-      <textarea placeholder="Describe your product — size, material, usage..." rows="4"
-        style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;color:#333;background:#FAFAFA;outline:none;resize:none;"></textarea>
-    </div>
-
-    <!-- Price & Stock -->
-    <div style="display:flex;gap:12px;">
-      <div style="flex:1;">
-        <p style="margin:0 0 6px;font-size:14px;font-weight:600;color:#333;">Price (₹) <span style="color:#FF3B30;">*</span></p>
-        <input type="number" placeholder="0.00"
-          style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;color:#333;background:#FAFAFA;outline:none;" />
-      </div>
-      <div style="flex:1;">
-        <p style="margin:0 0 6px;font-size:14px;font-weight:600;color:#333;">Stock Qty <span style="color:#FF3B30;">*</span></p>
-        <input type="number" placeholder="1"
-          style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;color:#333;background:#FAFAFA;outline:none;" />
-      </div>
-    </div>
-
-    <p style="margin:4px 0 0;font-size:11px;color:#AAAAAA;text-align:center;">Shop ID: \${shop_id}</p>
+  <!-- Header -->
+  <div style="padding: 24px 24px 20px; border-bottom: 1px solid #F2F2F2;">
+    <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #1C1C1E; letter-spacing: -0.5px;">Listing Guide</h2>
+    <p style="margin: 6px 0 0; font-size: 14px; color: #636366; line-height: 1.4;">Follow these standards to ensure your product is approved and reaches more buyers.</p>
   </div>
-</div>`,
+
+  <!-- Content Section -->
+  <div style="padding: 24px; max-height: 65vh; overflow-y: auto; background: #FAFAFA;">
+    
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+
+      <!-- Image Policy -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">📸</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Photography Standards</h3>
+        </div>
+        <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #48484A; line-height: 1.6;">
+          <li>Use a <b>plain white or neutral</b> background.</li>
+          <li>Upload at least 3 angles (Front, Back, Detail).</li>
+          <li>Ensure resolution is at least <b>1080 × 1080 px</b>.</li>
+          <li>Avoid watermarks or heavy filters.</li>
+        </ul>
+      </div>
+
+      <!-- Content Policy -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">✍️</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Title & Description</h3>
+        </div>
+        <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #48484A; line-height: 1.6;">
+          <li>Include <b>Brand + Material + Product Type</b> in the title.</li>
+          <li>Mention exact measurements (S, M, L or cm/inches).</li>
+          <li>Be transparent about any wear or unique textures.</li>
+        </ul>
+      </div>
+
+      <!-- Pricing Policy -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">💰</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Pricing & Shipping</h3>
+        </div>
+        <p style="margin: 0; font-size: 13px; color: #48484A; line-height: 1.5;">
+          Competitive pricing is key. Research similar items in the <b>${category}</b> category to stay within market range. Remember to account for the platform commission.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Action (Dismiss) -->
+  <div style="padding: 16px 24px 34px; background: #FFFFFF; border-top: 1px solid #F2F2F2;">
+    <button style="width: 100%; background: #1C1C1E; color: #FFFFFF; border: none; padding: 16px; border-radius: 14px; font-size: 16px; font-weight: 600; cursor: pointer;">
+      I Understand
+    </button>
+  </div>
+</div>
+`,
     },
     actions: [
       {
@@ -247,33 +263,58 @@ export const sellerTemplates: Record<string, UITemplate> = {
     content: {
       type: 'html',
       html: `
-<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;padding:0 0 24px 0;">
-
-  <div style="padding:18px 16px 14px;border-bottom:1px solid #EEEEEE;">
-    <p style="margin:0;font-size:18px;font-weight:700;color:#111;">Product Photos</p>
-    <p style="margin:6px 0 0;font-size:13px;color:#777;">Great photos help your product sell faster.</p>
+<div style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #FFFFFF; border-radius: 28px 28px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.15); max-width: 500px; margin: auto; overflow: hidden; border: 1px solid #E5E5E5;">
+  
+  <!-- Handle (Visual Cue for Bottom Sheet) -->
+  <div style="width: 100%; display: flex; justify-content: center; padding-top: 14px;">
+    <div style="width: 40px; height: 5px; background-color: #D1D1D6; border-radius: 10px;"></div>
   </div>
 
-  <div style="padding:16px;">
+  <!-- Header -->
+  <div style="padding: 24px 24px 20px; border-bottom: 1px solid #F2F2F2;">
+    <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #1C1C1E; letter-spacing: -0.5px;">Product Photo Standards</h2>
+    <p style="margin: 6px 0 0; font-size: 14px; color: #636366; line-height: 1.4;">Follow these standards to ensure your images are approved and increase visibility.</p>
+  </div>
 
-    <!-- Tips -->
-    <div style="background:#E8F5E9;border:1px solid #A5D6A7;border-radius:10px;padding:12px 14px;margin-bottom:16px;">
-      <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#2E7D32;">📸 Photo Tips</p>
-      <p style="margin:0 0 4px;font-size:12px;color:#388E3C;">✅ Use natural light or bright studio light</p>
-      <p style="margin:0 0 4px;font-size:12px;color:#388E3C;">✅ White or neutral background preferred</p>
-      <p style="margin:0 0 4px;font-size:12px;color:#388E3C;">✅ Show front, back, and close-up detail shots</p>
-      <p style="margin:0;font-size:12px;color:#388E3C;">✅ Minimum resolution: 800 × 800 px</p>
+  <!-- Content Section (Non-interactive Guide) -->
+  <div style="padding: 24px; max-height: 65vh; overflow-y: auto; background: #FAFAFA;">
+    
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+
+      <!-- Lighting & Background Guide -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">☀️</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Lighting & Background</h3>
+        </div>
+        <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #48484A; line-height: 1.6;">
+          <li>Use <b>natural light</b> or bright studio light.</li>
+          <li>White or neutral background preferred.</li>
+          <li>Avoid harsh shadows or complex backdrops.</li>
+        </ul>
+      </div>
+
+      <!-- Angles & Quality Guide -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">🔍</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Angles & Quality</h3>
+        </div>
+        <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #48484A; line-height: 1.6;">
+          <li>Show front, back, and close-up detail shots.</li>
+          <li>Minimum resolution: <b>800 × 800 px</b>.</li>
+          <li>Supported formats: JPG, PNG, WEBP. Max 10 MB each.</li>
+        </ul>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Upload -->
-    <p style="margin:0 0 8px;font-size:14px;font-weight:600;color:#333;">Upload Photos (up to 5)</p>
-    <div style="border:2px dashed #007AFF;border-radius:12px;background:#F0F7FF;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;">
-      <span style="font-size:34px;">🖼️</span>
-      <p style="margin:8px 0 0;font-size:14px;color:#007AFF;font-weight:600;">+ Add Product Photos</p>
-      <p style="margin:2px 0 0;font-size:11px;color:#AAAAAA;">JPG / PNG / WEBP · Max 10 MB each</p>
-    </div>
-
-    <p style="margin:12px 0 0;font-size:11px;color:#AAAAAA;text-align:center;">Item ID: \${product_item_id} · Shop: \${shop_id}</p>
+  <!-- Bottom Action Button (Dismiss) -->
+  <div style="padding: 16px 24px 34px; background: #FFFFFF; border-top: 1px solid #F2F2F2;">
+    <button style="width: 100%; background: #1C1C1E; color: #FFFFFF; border: none; padding: 16px; border-radius: 14px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      Got It
+    </button>
   </div>
 </div>`,
     },
@@ -292,64 +333,76 @@ export const sellerTemplates: Record<string, UITemplate> = {
   shop_address: {
     bottom_sheet: {
       open: false,
-      size: { height: '75%', expandable: true, initial_state: 'collapsed' },
+      size: { height: '80%', expandable: true, initial_state: 'collapsed' },
     },
     content: {
       type: 'html',
       html: `
-<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;padding:0 0 32px 0;">
-
-  <div style="padding:18px 16px 14px;border-bottom:1px solid #EEEEEE;">
-    <p style="margin:0;font-size:18px;font-weight:700;color:#111;">Shop Address</p>
-    <p style="margin:6px 0 0;font-size:13px;color:#777;">Enter accurate address so customers and delivery partners can reach you.</p>
+<div style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #FFFFFF; border-radius: 28px 28px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.15); max-width: 500px; margin: auto; overflow: hidden; border: 1px solid #E5E5E5;">
+  
+  <!-- Handle (Visual Cue for Bottom Sheet) -->
+  <div style="width: 100%; display: flex; justify-content: center; padding-top: 14px;">
+    <div style="width: 40px; height: 5px; background-color: #D1D1D6; border-radius: 10px;"></div>
   </div>
 
-  <div style="padding:16px;display:flex;flex-direction:column;gap:14px;">
+  <!-- Header -->
+  <div style="padding: 24px 24px 20px; border-bottom: 1px solid #F2F2F2;">
+    <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #1C1C1E; letter-spacing: -0.5px;">Address Guidelines</h2>
+    <p style="margin: 6px 0 0; font-size: 14px; color: #636366; line-height: 1.4;">Ensuring your shop location is precise helps avoid delivery delays and failed pickups.</p>
+  </div>
 
-    <div>
-      <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#444;">Shop Name <span style="color:#FF3B30;">*</span></p>
-      <input type="text" placeholder="e.g. Ravi Textiles"
-        style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;background:#FAFAFA;outline:none;" />
-    </div>
+  <!-- Content Section (Non-interactive Guide) -->
+  <div style="padding: 24px; max-height: 60vh; overflow-y: auto; background: #FAFAFA;">
+    
+    <div style="display: flex; flex-direction: column; gap: 20px;">
 
-    <div>
-      <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#444;">Address Line 1 <span style="color:#FF3B30;">*</span></p>
-      <input type="text" placeholder="Shop No., Building, Street"
-        style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;background:#FAFAFA;outline:none;" />
-    </div>
-
-    <div>
-      <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#444;">Address Line 2</p>
-      <input type="text" placeholder="Landmark, Area (optional)"
-        style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;background:#FAFAFA;outline:none;" />
-    </div>
-
-    <div style="display:flex;gap:10px;">
-      <div style="flex:1.2;">
-        <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#444;">City <span style="color:#FF3B30;">*</span></p>
-        <input type="text" placeholder="City"
-          style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;background:#FAFAFA;outline:none;" />
+      <!-- Verification Standard -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">📍</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Accurate Pinning</h3>
+        </div>
+        <p style="margin: 0; font-size: 13px; color: #48484A; line-height: 1.6;">
+          Your address should match the <b>Google Maps</b> location. This allows our delivery partners to use GPS navigation directly to your doorstep.
+        </p>
       </div>
-      <div style="flex:0.8;">
-        <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#444;">PIN Code <span style="color:#FF3B30;">*</span></p>
-        <input type="number" placeholder="6-digit PIN"
-          style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;background:#FAFAFA;outline:none;" />
+
+      <!-- Detail Requirements -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">🏢</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">What to Include</h3>
+        </div>
+        <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #48484A; line-height: 1.6;">
+          <li><b>Landmarks:</b> Mention a well-known nearby building or shop.</li>
+          <li><b>Shop Number:</b> Clearly state your unit or floor number.</li>
+          <li><b>PIN Code:</b> Ensure your 6-digit code is current and verified.</li>
+        </ul>
       </div>
+
+      <!-- Logistic Benefits -->
+      <div style="background: #EBF5FF; padding: 16px; border-radius: 16px; border: 1px solid #CCE5FF;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+          <span style="font-size: 18px;">🚚</span>
+          <h3 style="margin: 0; font-size: 14px; font-weight: 700; color: #004085;">Why this matters</h3>
+        </div>
+        <p style="margin: 0; font-size: 12px; color: #004085; line-height: 1.5;">
+          Verified addresses receive <b>20% faster pickups</b> and reduce the likelihood of "Address Not Found" returns.
+        </p>
+      </div>
+
     </div>
 
-    <div>
-      <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#444;">State <span style="color:#FF3B30;">*</span></p>
-      <input type="text" placeholder="e.g. Maharashtra"
-        style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;background:#FAFAFA;outline:none;" />
-    </div>
+    <p style="margin: 24px 0 0; font-size: 11px; color: #999; text-align: center;">
+      Referencing Shop: <b>${shop_id}</b>
+    </p>
+  </div>
 
-    <div>
-      <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#444;">Contact Phone <span style="color:#FF3B30;">*</span></p>
-      <input type="tel" placeholder="10-digit mobile number"
-        style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #DDDDDD;border-radius:10px;font-size:14px;background:#FAFAFA;outline:none;" />
-    </div>
-
-    <p style="margin:0;font-size:11px;color:#AAAAAA;text-align:center;">Shop ID: \${shop_id}</p>
+  <!-- Bottom Action Button (Dismiss) -->
+  <div style="padding: 16px 24px 34px; background: #FFFFFF; border-top: 1px solid #F2F2F2;">
+    <button style="width: 100%; background: #1C1C1E; color: #FFFFFF; border: none; padding: 16px; border-radius: 14px; font-size: 16px; font-weight: 600; cursor: pointer;">
+      I Understand
+    </button>
   </div>
 </div>`,
     },
@@ -373,47 +426,70 @@ export const sellerTemplates: Record<string, UITemplate> = {
     },
     content: {
       type: 'html',
-      html: `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;padding:0 0 28px 0;">
-
-  <!-- Grabber -->
-  <div style="display:flex;justify-content:center;padding-top:14px;">
-    <div style="width:40px;height:5px;background:#E5E5EA;border-radius:10px;"></div>
+      html: `<div style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #FFFFFF; border-radius: 28px 28px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.15); max-width: 500px; margin: auto; overflow: hidden; border: 1px solid #E5E5E5;">
+  
+  <!-- Handle -->
+  <div style="width: 100%; display: flex; justify-content: center; padding-top: 14px;">
+    <div style="width: 40px; height: 5px; background-color: #D1D1D6; border-radius: 10px;"></div>
   </div>
 
-  <!-- Icon + Header -->
-  <div style="padding:24px 20px 16px;text-align:center;">
-    <div style="font-size:48px;margin-bottom:12px;">📧</div>
-    <p style="margin:0;font-size:20px;font-weight:700;color:#111;">Verify Your Email</p>
-    <p style="margin:8px 0 0;font-size:14px;color:#666;line-height:1.5;">
-      We sent a 6-digit OTP to<br/>
-      <strong style="color:#333;">\${seller_email}</strong>
+  <!-- Header -->
+  <div style="padding: 24px 24px 20px; text-align: center; border-bottom: 1px solid #F2F2F2;">
+    <div style="font-size: 48px; margin-bottom: 12px;">📩</div>
+    <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #1C1C1E; letter-spacing: -0.5px;">Email Verification Guide</h2>
+    <p style="margin: 8px 0 0; font-size: 14px; color: #636366; line-height: 1.5;">
+      We use One-Time Passwords (OTP) to keep your shop secure. Here is how it works.
     </p>
   </div>
 
-  <!-- OTP Input -->
-  <div style="padding:0 20px 20px;">
-    <p style="margin:0 0 10px;font-size:14px;font-weight:600;color:#333;">Enter OTP</p>
-    <div style="display:flex;gap:10px;justify-content:center;margin-bottom:16px;">
-      <input type="number" maxlength="1" style="width:48px;height:56px;text-align:center;font-size:22px;font-weight:700;border:2px solid #007AFF;border-radius:12px;outline:none;background:#F0F7FF;color:#007AFF;" />
-      <input type="number" maxlength="1" style="width:48px;height:56px;text-align:center;font-size:22px;font-weight:700;border:2px solid #DDDDDD;border-radius:12px;outline:none;background:#FAFAFA;color:#333;" />
-      <input type="number" maxlength="1" style="width:48px;height:56px;text-align:center;font-size:22px;font-weight:700;border:2px solid #DDDDDD;border-radius:12px;outline:none;background:#FAFAFA;color:#333;" />
-      <input type="number" maxlength="1" style="width:48px;height:56px;text-align:center;font-size:22px;font-weight:700;border:2px solid #DDDDDD;border-radius:12px;outline:none;background:#FAFAFA;color:#333;" />
-      <input type="number" maxlength="1" style="width:48px;height:56px;text-align:center;font-size:22px;font-weight:700;border:2px solid #DDDDDD;border-radius:12px;outline:none;background:#FAFAFA;color:#333;" />
-      <input type="number" maxlength="1" style="width:48px;height:56px;text-align:center;font-size:22px;font-weight:700;border:2px solid #DDDDDD;border-radius:12px;outline:none;background:#FAFAFA;color:#333;" />
-    </div>
+  <!-- Content Section -->
+  <div style="padding: 24px; max-height: 60vh; overflow-y: auto; background: #FAFAFA;">
+    
+    <div style="display: flex; flex-direction: column; gap: 20px;">
 
-    <!-- Resend -->
-    <p style="text-align:center;font-size:13px;color:#888;margin:0 0 20px;">
-      Didn't receive it?
-      <span style="color:#007AFF;font-weight:600;cursor:pointer;">Resend OTP</span>
-    </p>
+      <!-- Step 1: Delivery -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">🕒</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Expected Delivery</h3>
+        </div>
+        <p style="margin: 0; font-size: 13px; color: #48484A; line-height: 1.6;">
+          OTPs usually arrive within <b>60 seconds</b> at <b>${seller_email}</b>. If you don't see it, please check your <b>Spam</b> or <b>Promotions</b> folder.
+        </p>
+      </div>
 
-    <!-- Notice -->
-    <div style="background:#FFF8E1;border:1px solid #FFE082;border-radius:10px;padding:10px 14px;">
-      <p style="margin:0;font-size:12px;color:#795548;">
-        ⚠️ OTP is valid for 10 minutes. Do not share it with anyone.
-      </p>
+      <!-- Step 2: Security -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">🛡️</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Security Best Practices</h3>
+        </div>
+        <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #48484A; line-height: 1.6;">
+          <li>The code is only valid for <b>10 minutes</b>.</li>
+          <li>Our support team will <b>never</b> ask you for this code.</li>
+          <li>Each code can only be used once.</li>
+        </ul>
+      </div>
+
+      <!-- Troubleshooting -->
+      <div style="background: #FFF9C4; padding: 16px; border-radius: 16px; border: 1px solid #FFF176;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+          <span style="font-size: 18px;">⚠️</span>
+          <h3 style="margin: 0; font-size: 14px; font-weight: 700; color: #5D4037;">Not Receiving the Code?</h3>
+        </div>
+        <p style="margin: 0; font-size: 12px; color: #5D4037; line-height: 1.5;">
+          If you have tried resending and still haven't received it, ensure that your email server isn't blocking <b>noreply@yourdomain.com</b>.
+        </p>
+      </div>
+
     </div>
+  </div>
+
+  <!-- Bottom Action Button -->
+  <div style="padding: 16px 24px 34px; background: #FFFFFF; border-top: 1px solid #F2F2F2;">
+    <button style="width: 100%; background: #007AFF; color: #FFFFFF; border: none; padding: 16px; border-radius: 14px; font-size: 16px; font-weight: 600; cursor: pointer;">
+      Got It, Continue
+    </button>
   </div>
 </div>`,
     },
@@ -441,52 +517,69 @@ export const sellerTemplates: Record<string, UITemplate> = {
     },
     content: {
       type: 'html',
-      html: `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;padding:0 0 28px 0;">
-
-  <!-- Grabber -->
-  <div style="display:flex;justify-content:center;padding-top:14px;">
-    <div style="width:40px;height:5px;background:#E5E5EA;border-radius:10px;"></div>
+      html: `<div style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #FFFFFF; border-radius: 28px 28px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.15); max-width: 500px; margin: auto; overflow: hidden; border: 1px solid #E5E5E5;">
+  
+  <!-- Handle -->
+  <div style="width: 100%; display: flex; justify-content: center; padding-top: 14px;">
+    <div style="width: 40px; height: 5px; background-color: #D1D1D6; border-radius: 10px;"></div>
   </div>
 
   <!-- Header -->
-  <div style="padding:22px 18px 14px;border-bottom:1px solid #EEEEEE;">
-    <p style="margin:0;font-size:19px;font-weight:700;color:#111;">Verify Shop Address</p>
-    <p style="margin:6px 0 0;font-size:13px;color:#777;">Upload proof of your shop address to complete verification.</p>
+  <div style="padding: 24px 24px 20px; border-bottom: 1px solid #F2F2F2;">
+    <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #1C1C1E; letter-spacing: -0.5px;">Verification Guide</h2>
+    <p style="margin: 6px 0 0; font-size: 14px; color: #636366; line-height: 1.4;">Follow these steps to successfully verify your shop address.</p>
   </div>
 
-  <div style="padding:16px 18px;">
+  <!-- Content Section -->
+  <div style="padding: 24px; max-height: 55vh; overflow-y: auto; background: #FAFAFA;">
+    
+    <div style="display: flex; flex-direction: column; gap: 20px;">
 
-    <!-- Current address preview -->
-    <div style="background:#F4F6FF;border:1px solid #D0D9FF;border-radius:10px;padding:12px 14px;margin-bottom:18px;">
-      <p style="margin:0 0 4px;font-size:12px;font-weight:600;color:#4A5568;">📍 Address on File</p>
-      <p style="margin:0;font-size:14px;color:#333;line-height:1.5;">\${shop_address}</p>
+      <!-- Address Consistency -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">📄</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Address Consistency</h3>
+        </div>
+        <p style="margin: 0; font-size: 13px; color: #48484A; line-height: 1.6;">
+          The address on your document must <b>exactly match</b> the address you provided: <br/>
+          <span style="color: #007AFF; font-family: monospace;">${shop_address}</span>
+        </p>
+      </div>
+
+      <!-- Document Validity -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; border: 1px solid #E5E5EA;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+          <span style="font-size: 20px;">📅</span>
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Document Validity</h3>
+        </div>
+        <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #48484A; line-height: 1.6;">
+          <li>Must be issued within the <b>last 3 months</b>.</li>
+          <li>All four corners of the document must be visible.</li>
+          <li>Text must be clear and legible (no blur or glare).</li>
+        </ul>
+      </div>
+
+      <!-- Accepted Documents List -->
+      <div style="background: #EBF5FF; padding: 16px; border-radius: 16px; border: 1px solid #CCE5FF;">
+        <h3 style="margin: 0 0 8px; font-size: 14px; font-weight: 700; color: #004085;">Accepted Proofs</h3>
+        <p style="margin: 0; font-size: 12px; color: #004085; line-height: 1.5;">
+          Electricity/Water Bills, Rental Agreements, Bank Statements, or Government-issued Business Certificates.
+        </p>
+      </div>
+
     </div>
 
-    <!-- Document type -->
-    <p style="margin:0 0 10px;font-size:14px;font-weight:600;color:#333;">Select Proof of Address</p>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-      <button style="padding:8px 14px;border-radius:20px;border:1.5px solid #007AFF;background:#EBF4FF;color:#007AFF;font-size:13px;font-weight:600;cursor:pointer;">Utility Bill</button>
-      <button style="padding:8px 14px;border-radius:20px;border:1.5px solid #DDDDDD;background:#F5F5F5;color:#555;font-size:13px;cursor:pointer;">Rental Agreement</button>
-      <button style="padding:8px 14px;border-radius:20px;border:1.5px solid #DDDDDD;background:#F5F5F5;color:#555;font-size:13px;cursor:pointer;">Bank Statement</button>
-      <button style="padding:8px 14px;border-radius:20px;border:1.5px solid #DDDDDD;background:#F5F5F5;color:#555;font-size:13px;cursor:pointer;">Aadhar Card</button>
-    </div>
+    <p style="margin: 24px 0 0; font-size: 11px; color: #999; text-align: center;">
+      Shop ID Reference: <b>${shop_id}</b>
+    </p>
+  </div>
 
-    <!-- Upload -->
-    <p style="margin:0 0 8px;font-size:14px;font-weight:600;color:#333;">Upload Document</p>
-    <div style="border:2px dashed #AAAAAA;border-radius:12px;background:#FAFAFA;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;margin-bottom:16px;">
-      <span style="font-size:28px;">📁</span>
-      <p style="margin:6px 0 0;font-size:13px;color:#888;">Tap to upload address proof</p>
-      <p style="margin:2px 0 0;font-size:11px;color:#BBBBBB;">JPG / PNG / PDF · Max 5 MB</p>
-    </div>
-
-    <!-- Notice -->
-    <div style="background:#FFF8E1;border:1px solid #FFE082;border-radius:10px;padding:10px 14px;">
-      <p style="margin:0;font-size:12px;color:#795548;line-height:1.6;">
-        ⚠️ Document must clearly show your shop name and address. It must be issued within the last 3 months.
-      </p>
-    </div>
-
-    <p style="margin:12px 0 0;font-size:11px;color:#AAAAAA;text-align:center;">Shop ID: \${shop_id}</p>
+  <!-- Bottom Action Button -->
+  <div style="padding: 16px 24px 34px; background: #FFFFFF; border-top: 1px solid #F2F2F2;">
+    <button style="width: 100%; background: #1C1C1E; color: #FFFFFF; border: none; padding: 16px; border-radius: 14px; font-size: 16px; font-weight: 600; cursor: pointer;">
+      Understood, Start Upload
+    </button>
   </div>
 </div>`,
     },
