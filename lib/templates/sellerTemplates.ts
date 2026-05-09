@@ -221,7 +221,7 @@ export const sellerTemplates: Record<string, UITemplate> = {
           <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Pricing & Shipping</h3>
         </div>
         <p style="margin: 0; font-size: 13px; color: #48484A; line-height: 1.5;">
-          Competitive pricing is key. Research similar items in the <b>${category}</b> category to stay within market range. Remember to account for the platform commission.
+          Competitive pricing is key. Research similar items in the <b><b>\${category}</b>}</b> category to stay within market range. Remember to account for the platform commission.
         </p>
       </div>
 
@@ -394,7 +394,7 @@ export const sellerTemplates: Record<string, UITemplate> = {
     </div>
 
     <p style="margin: 24px 0 0; font-size: 11px; color: #999; text-align: center;">
-      Referencing Shop: <b>${shop_id}</b>
+      Referencing Shop: <b>\${shop_id}</b>
     </p>
   </div>
 
@@ -454,7 +454,7 @@ export const sellerTemplates: Record<string, UITemplate> = {
           <h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1C1C1E;">Expected Delivery</h3>
         </div>
         <p style="margin: 0; font-size: 13px; color: #48484A; line-height: 1.6;">
-          OTPs usually arrive within <b>60 seconds</b> at <b>${seller_email}</b>. If you don't see it, please check your <b>Spam</b> or <b>Promotions</b> folder.
+          OTPs usually arrive within <b>60 seconds</b> at <b>\${seller_email}</b>. If you don't see it, please check your <b>Spam</b> or <b>Promotions</b> folder.
         </p>
       </div>
 
@@ -543,7 +543,7 @@ export const sellerTemplates: Record<string, UITemplate> = {
         </div>
         <p style="margin: 0; font-size: 13px; color: #48484A; line-height: 1.6;">
           The address on your document must <b>exactly match</b> the address you provided: <br/>
-          <span style="color: #007AFF; font-family: monospace;">${shop_address}</span>
+          <span style="color: #007AFF; font-family: monospace;">\${shop_address}</span>
         </p>
       </div>
 
@@ -571,7 +571,7 @@ export const sellerTemplates: Record<string, UITemplate> = {
     </div>
 
     <p style="margin: 24px 0 0; font-size: 11px; color: #999; text-align: center;">
-      Shop ID Reference: <b>${shop_id}</b>
+      Shop ID Reference: <b>\${shop_id}</b>
     </p>
   </div>
 
